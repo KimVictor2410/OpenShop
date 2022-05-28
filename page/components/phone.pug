@@ -1,0 +1,6 @@
+section.products.container
+  h2.title Cell Phone
+  .products-items
+    each item, key in phone
+      +products('iphone/phone', '.png', key+1, item.title, item.price)
+  a(href="#!").more learn more 

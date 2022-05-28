@@ -1,0 +1,6 @@
+section.products.container
+  h2.title Top seller
+  .products-items
+    each item, key in sale
+      +products('watch/top', '.png', key+1, item.title, item.price)
+  a(href="#!").more learn more 

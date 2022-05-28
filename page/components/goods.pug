@@ -1,0 +1,11 @@
+.goods.container
+  .goods-items
+    each item, key in goods
+      .goods-items__card
+        .goods-items__card--img: img(src="images/product-"+(key+1)+".png", alt="")
+        a(href="#!").goods-items__card--content
+          .goods-items__card-text
+            h3=item.title
+            p=item.price
+          .goods-items__card-sale=item.sale
+  a.more(href="#!") learn more 

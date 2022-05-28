@@ -1,0 +1,8 @@
+header.slider.container(autoplay create-dots)
+  .slider-list
+    each item, key in slides
+      .slider-list__slide
+        .slider-list__slide--img: img(src="images/slide"+(key+1)+".png", alt="")
+        .slider-list__slide--content
+          h2=item
+          a(href="#!").more SHOP NOW

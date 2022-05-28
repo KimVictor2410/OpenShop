@@ -1,0 +1,6 @@
+section.products.container
+  h2.title Samsung
+  .products-items
+    each item, key in samsung
+      +products('samsung/phone', '.png', key+1, item.title, item.price)
+  a(href="#!").more learn more 

@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'notoSans';
+  font-weight: 400;
+  &::before, &::after{
+    font-family: 'icons';
+  }
+}
+:root{
+  --dark: #313131;
+  --white: #FFFFFF;
+  --black: #010101;
+  --gray: #ABABAB;
+  --gray-text: #BBBBBB;
+  --border: #C4C4C4;
+}
+$dark: var(--dark);
+$white: var(--white);
+$black: var(--black);
+$gray: var(--gray);
+$gray-text: var(--gray-text);
+$border: var(--border);
+
+.icon{
+  &-chevrone::before{content: '\f077'; font-weight: 300;}
+  &-phone::before{content: '\f879'; font-weight: 300;}
+  &-user::before{content: '\f007'; font-weight: 300;}
+  &-cart::before{content: '\f07a'; font-weight: 300;}
+  &-heart::before{content: '\f004'; font-weight: 300;}
+  &-search::before{content: '\f002'; font-weight: 300;}
+  &-telegram::before{content: '\f3fe'; font-weight: 400;}
+  &-instagram::before{content: '\f16d'; font-weight: 400;}
+  &-facebook::before{content: '\f39e'; font-weight: 400;}
+}
+
+.container{
+  @include container();
+  min-height: 40px;
+  // border: 1px solid red;
+}
+.more{
+  min-width: 190px;
+  padding: 12px;
+  column-gap: 10px;
+  display: inline-flex;
+  justify-content: center;
+  text-transform: uppercase;
+  background: $dark;
+  @include fonts(20px, 25px, $white);
+}
+.title{
+  @include fonts(36px, 49px, $dark, 600);
+  width: 100%;
+}

@@ -1,0 +1,37 @@
+nav.navbar.container
+  a(href="index.html").navbar-logo: img(src="images/Logo.png", alt="")
+  button.navbar-btn
+    -for(var i=0; i<3; i++)
+      span
+  form(action="").navbar-search
+    input(type="text" placeholder="What are you looking for?")
+    button.navbar-search__btn.icon-search SEARCH OUR STORE
+  .navbar-nav
+    .navbar-nav__top
+      .navbar-top.container
+        .navbar-top__lan
+          a(href="#!").navbar-top__lan--link.icon-chevrone English
+          .navbar-top__lan--list
+            a(href="#!") English  
+            a(href="#!") Russian  
+        a(href="#!").navbar-top__link.icon-phone (907) 555-0101 
+        a(href="#!").navbar-top__link.icon-user Sing in 
+        a(href="#!").navbar-top__link.icon-cart Cart
+    ul.navbar-nav__bottom.navbar-bottom
+      each link, key in ['Cell Phones','Computers&Laptop','Tv&Video','Asseccories','Home appliance','Video Games&Consoles']
+        if(key == 0)
+          li
+            a(href="phones.html")=link
+            .navbar-bottom__dropdown
+              .navbar-bottom__dropdown--list
+                h4 Cell Phones       
+                ul
+                  each linkHover in ['Xiaomi','Apple','Samsung','Huawei','BQ','Nokia','Inoi','Vivo']
+                    li: a(href="#!")=linkHover
+              .navbar-bottom__dropdown--list
+                h4 Tablets       
+                ul
+                  each linkHover in ['Xiaomi','Apple','Samsung','Huawei','BQ','Nokia','Inoi','Vivo']
+                    li: a(href="#!")=linkHover
+        else
+          li: a(href="#!")=link

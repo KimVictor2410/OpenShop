@@ -1,0 +1,42 @@
+.footer{
+  width: 100%;
+  background: $dark;
+  padding: 30px 0;
+  margin-top: 70px;
+  @include media(576){
+    width: 105%;
+  }
+  &-navbar{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    @include media(768){
+      flex-direction: column;
+      row-gap: 15px;
+    }
+    &__logo{
+      img{
+        width: 190px;
+      }
+    }
+    &__list{
+      display: flex;
+      column-gap: 15px;
+      a{
+        @include fonts(18px, 25px, $white);
+        padding: 10px 5px;
+        display: inline-flex;
+      }
+    }
+    &__social{
+      display: flex;
+      a{
+        font-size: 30px;
+        color: $white;
+        padding: 10px;
+        display: inline-flex;
+      }
+    }
+  }
+}

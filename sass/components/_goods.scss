@@ -1,0 +1,88 @@
+.goods{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  padding-top: 50px;
+  &-items{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    @include media(1200){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media(768){
+      grid-template-columns: 100%;
+    }
+    &__card{
+      position: relative;
+      min-height: 240px;
+      $goods: &;
+      @include media(768){
+        min-height: unset;
+        height: 250px;
+      }
+      &:first-of-type{
+        grid-row: span 2;
+        grid-column: span 2;
+      }
+      &:nth-of-type(2){
+        grid-column: span 2;
+      }
+      &:first-of-type,
+      &:nth-of-type(2){
+        #{$goods}--content{
+          flex-direction: column-reverse;
+          @include media(768){
+            flex-direction: column;
+          }
+        }
+        @include media(1200){
+          grid-row: unset;
+          grid-column: unset;
+        }
+      }
+      &--img{
+        width: 100%;
+        height: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &--content{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        top: 0;
+        left: 0;
+      }
+      &-text{
+        display: flex;
+        flex-direction: column;
+        h3,
+        p{
+          @include fonts(24px, 35px, $dark);
+        }
+        h3{font-weight: 500;}
+        p{font-weight: 300;}
+      }
+      &-sale{
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $dark;
+        @include fonts(20px, 25px, $white);
+      }
+    }
+  }
+}

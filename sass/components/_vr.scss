@@ -1,0 +1,50 @@
+.vr{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__content{
+    width: 100%;
+    display: flex;
+    column-gap: 150px;
+    flex-direction: row;
+    padding-top: 70px;
+    @include media(992){
+      flex-direction: column;
+    }
+    h4{
+      @include fonts(48px, 65px, $dark, 600);
+      @include media(992){
+        @include fonts(44px, 60px, $dark, 600);
+      }
+      @include media(576){
+        @include fonts(40px, 55px, $dark, 600);
+      }
+    }
+    p{
+      @include fonts(24px, 33px, $dark, 400);
+      @include media(992){
+        @include fonts(20px, 30px, $dark, 400);
+      }
+      @include media(576){
+        @include fonts(15px, 25px, $dark, 400);
+      }
+    }
+  }
+  &__block{
+    width: 100%;
+    display: flex;
+    row-gap: 50px;
+    flex-direction: column;
+    @include media(992){
+      align-items: center;
+    }
+  }
+  &__img{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10px;
+    position: relative;
+    img{width: 100%;}
+  }
+}

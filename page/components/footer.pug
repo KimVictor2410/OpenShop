@@ -1,0 +1,9 @@
+footer.footer
+  .container.footer-navbar
+    a(href="#!").footer-navbar__logo: img(src="images/Logo-footer.png", alt="")
+    ul.footer-navbar__list
+      each link, key in ['News','Help','Contacts']
+        li: a(href="#!")=link
+    ul.footer-navbar__social
+      each link, key in ['telegram','instagram','facebook']
+        li: a(href="#!" class="icon-"+link) 

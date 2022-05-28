@@ -1,0 +1,93 @@
+.slider{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  height: 600px;
+  @include media(992){
+    padding-top: 0;
+    height: 500px;
+  }
+  @include media(480){
+    height: 350px;
+  }
+  &-list{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    &__slide{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: $white;
+      display: flex;
+      &--img{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include media(992){
+          width: 100%;
+        }
+        img{
+          width: 100%;
+          @include media(992){
+            width: 80%;
+          }
+        }
+      }
+      &--content{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        row-gap: 120px;
+        @include media(992){
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          justify-content: space-between;
+          padding: 30px 0;
+          row-gap: 0;
+        }
+        h2{
+          @include fonts(48px, 70px, $dark, 600);
+          padding: 0 5%;
+          @include media(992){
+            @include fonts(40px, 50px);
+            padding: 0;
+          }
+          @include media(480){
+            @include fonts(30px, 40px);
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  &-dots{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: red;
+    column-gap: 25px;
+    li{
+      width: 10px;
+      height: 10px;
+      border-radius: 20px;
+      background: $gray;
+      cursor: pointer;
+      &.active{
+        width: 15px;
+        height: 15px;
+        background: $dark;
+        cursor: auto;
+      }
+    }
+  }
+}

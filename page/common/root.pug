@@ -1,0 +1,22 @@
+-var slides = ['Color your days with small joy1', 'Color your days with small joy2']
+
+-var goods = [{title:'Suunto SS050143000',price:'70$',sale:'-57%'},{title:'Airpods 2.1',price:'95$',sale:'-30%'},{title:'Xiaomi Mi Power Bank 2s 10000',price:'9$',sale:'-20%'},{title:'Remax RP-W1 White',price:'11$',sale:'-10%'}]
+
+-var phone = [{title:'IPhone 12 Pro Max 128GB (Gray)',price:'1300$'},{title:'IPhone 11 Pro 128GB (Yellow)',price:'700$'},{title:'IPhone 12 Pro 256 GB (Blue)',price:'1500$'},{title:'IPhone 11 Pro 256 GB (Red)',price:'850$'},]
+
+-var xiaomi = [{title:'Mi 10t Pro 8/256GB (Black)',price:'730$'},{title:'Xiaomi mi 10t Pro 8/256GB (Silver)',price:'727$'},{title:'Mi 10 Lite 6/64GB (Grey)',price:'337$'},{title:'Mi 10 Lite 6/64GB (Blue)',price:'325$'},]
+
+-var samsung = [{title:'Samsung Galaxy A51 4/64GB (Black)',price:'230$'},{title:'Samsung Galaxy A21S 3/32GB (Blue)',price:'250$'},{title:'Samsung Galaxy S10Lite 6/128GB (Blue)',price:'535$'},{title:'Samsung Galaxy A41 4/64GB (Blue)',price:'237$'},]
+
+-var nout = [{title:'Lenovo IdeaPad L3 15IML05',price:'1350$'},{title:'Dream Machines G1650Ti-15UA65',price:'1430$'},{title:'Apple MacBook Air 13" 2020',price:'1723$'},{title:'Dream Machines 15UA51',price:'1200$'},]
+
+-var sale = [{title:'Smart Watch W34 | ZM (White)',price:'29$'},{title:'AirPods 2.1',price:'135$'},{title:'Smart Watch W34 | ZM (Black)',price:'29$'},{title:'Coffee machine VITEK VT-1526',price:'78$'},]
+
+mixin products(imgUrl, imgExt, imgNum, title, text)
+  .products-card
+    .products-card__fav.icon-heart
+    .products-card__img: img(src="images/"+imgUrl+imgNum+imgExt, alt="")
+    .products-card__content
+      h3=title
+      p=text
+      a(href="buy.html").products-card__content--btn buy

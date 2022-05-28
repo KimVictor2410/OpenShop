@@ -1,0 +1,82 @@
+.products{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  padding-top: 70px;
+  &-items{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    @include media(992){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media(576){
+      grid-template-columns: 1fr;
+    }
+  }
+  &-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    transition: box-shadow 0.3s;
+    overflow: hidden;
+    row-gap: 15px;
+    $card: &;
+    &:hover{
+      box-shadow: 0 0 5px 0 $dark;
+      #{$card}{
+        &__fav{top: 17px;}
+        &__content--btn{
+          transform: translateY(0px);
+        }
+      }
+    }
+    &__fav{
+      position: absolute;
+      font-size: 20px;
+      color: $dark;
+      right: 16px;
+      top: -28px;
+      transition: top 0.3s;
+    }
+    &__img{
+      width: 100%;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    &__content{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      h3{
+        @include fonts(16px, 21px, $dark, 500);
+      }
+      p{
+        @include fonts(14px, 19px, $dark, 300);
+        margin: 5px 0 10px;
+      }
+      &--btn{
+        padding: 5px;
+        min-width: 100px;
+        background: $dark;
+        @include fonts(14px, 19px, $white);
+        text-transform: uppercase;
+        transform: translateY(70px);
+        transition: transform 0.3s;
+      }
+    }
+  }
+}

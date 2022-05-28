@@ -1,0 +1,6 @@
+section.products.container
+  h2.title Computers & Laptop
+  .products-items
+    each item, key in nout
+      +products('noutbook/nout', '.png', key+1, item.title, item.price)
+  a(href="#!").more learn more 
